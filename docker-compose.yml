@@ -1,0 +1,10 @@
+version: '3'
+services:
+    tor:
+        image: stefanoj3/tordock:latest
+    metasploit:
+        image: metasploitframework/metasploit-framework:latest
+        environment:
+            DATABASE_URL: postgres://postgres@db:5432/msf
+        links:
+            - tor
